@@ -15,14 +15,14 @@
 
     //ENTRADA
 
-    const litros = parseFloat(prompt("Digite o número de litros vendidos: "));
-    const tipoCombustivel = prompt("Digite o tipo de combustível (A-álcool, G-gasolina): ").toUpperCase();
+    const litros = Number(prompt(`Digite o número de litros vendidos: `));
+    const tipoCombustivel = prompt(`Digite o tipo de combustível (A-álcool, G-gasolina): `).toUpperCase();
 
     //PROCESSAMENTO
     const precoGasolina = 6.50;
     const precoAlcool = 6.10;
-    const descontoAte20Litros = 0;
-    const descontoAcima20Litros = 0;
+    let descontoAte20Litros = 0;
+    let descontoAcima20Litros = 0;
 
     if (tipoCombustivel === "A") {
         descontoAte20Litros = 0.03;
@@ -31,8 +31,7 @@
         descontoAte20Litros = 0.04;
         descontoAcima20Litros = 0.06;
     } else {
-        console.log("Tipo de combustível inválido!");
-        return;
+        alert("Tipo de combustível inválido!");
     }
 
     var valorPago;
@@ -42,7 +41,8 @@
         } else if (tipoCombustivel === "G") {
             valorPago = litros * (precoGasolina - (precoGasolina * descontoAte20Litros));
         }
-    } else {
+    } 
+    else {
         if (tipoCombustivel === "A") {
             valorPago = litros * (precoAlcool - (precoAlcool * descontoAcima20Litros));
         } else if (tipoCombustivel === "G") {
@@ -53,12 +53,4 @@
     //SAÍDA
 
     alert("Valor a ser pago: R$ " + valorPago.toFixed(2));
-
-
-
-
-        
-    
-
-
 </script>

@@ -9,9 +9,9 @@
 
  //ENTRADA
 
-const numero1 = Number(prompt("Digite o primeiro número: "));
-const numero2 = Number(prompt("Digite o segundo número: "));
-const operacao = prompt("Selecione a operação desejada (+, -, *, /): ");
+const numero1 = Number(prompt(`Digite o primeiro número: `));
+const numero2 = Number(prompt(`Digite o segundo número: `));
+const operacao = prompt(`Selecione a operação desejada (+, -, *, /): `);
 
  //PROCESSAMENTO
 
@@ -27,26 +27,29 @@ if (operacao === "+") {
     resultado = numero1 / numero2;
 } else {
     alert("Operação inválida!");
-    return;
+
 }
 
-var propriedades = "";
+var propriedades;
 
 if (resultado % 2 === 0) {
     propriedades += "par, ";
-} else {
+} 
+else {
     propriedades += "ímpar, ";
 }
 
 if (resultado >= 0) {
     propriedades += "positivo, ";
-} else {
+} 
+else {
     propriedades += "negativo, ";
 }
 
 if (Number.isInteger(resultado)) {
     propriedades += "inteiro.";
-} else {
+} 
+else {
     propriedades += "decimal.";
 }
 
@@ -57,9 +60,5 @@ alert("O número é " + propriedades);
 
 
 
-   
-
-    
-  
 
 </script>
